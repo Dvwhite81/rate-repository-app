@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   appBarContainer: {
+    flexDirection: 'row',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: theme.colors.bg,
     padding: 20
@@ -102,6 +103,10 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 10,
+  },
+  tab: {
+    marginRight: 10,
+    marginVertical: 'auto'
   },
 });
 

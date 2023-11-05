@@ -1,19 +1,19 @@
-import { View, Pressable } from 'react-native';
-import Text from './Text';
+import { View, ScrollView } from 'react-native';
+import { Link } from 'react-router-native';
+import Tab from './Tab';
 import styles from '../styles';
 
 const AppBar = () => {
   return (
     <View style={styles.appBarContainer}>
-      <Pressable>
-        <Text
-          color={'white'}
-          fontSize={'subheading'}
-          fontWeight={'bold'}
-          >
-          Repositories
-        </Text>
-      </Pressable>
+      <ScrollView horizontal>
+        <Link to='/' activeStyle={{ color: 'red' }}>
+          <Tab text='Repositories' />
+        </Link>
+        <Link to='/signin' activeStyle={{ color: 'red' }}>
+         <Tab text='Sign in' />
+        </Link>
+      </ScrollView>
     </View>
   );
 };
