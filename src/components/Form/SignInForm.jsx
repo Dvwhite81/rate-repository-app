@@ -4,8 +4,6 @@ import Text from '../Text';
 import styles from '../../styles';
 
 const SignInForm = ({ onSubmit }) => {
-
-
   return (
     <View style={styles.form}>
       <FormikTextInput name='username' placeholder='Username' />

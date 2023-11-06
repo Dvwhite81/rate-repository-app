@@ -138,9 +138,12 @@ const styles = StyleSheet.create({
   },
   // Error
   errorText: {
+    color: theme.colors.error,
     marginTop: 5,
   },
-
+  errorBorder: {
+    borderColor: theme.colors.error,
+  },
 });
 
 export default styles;

@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import SignInForm from './Form/SignInForm';
+import { SignInSchema } from '../validation';
 
 const initialValues = {
   username: '',
@@ -12,7 +13,11 @@ const SignIn = () => {
   }
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={SignInSchema}
+      onSubmit={onSubmit}
+    >
       {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
     </Formik>
   );
