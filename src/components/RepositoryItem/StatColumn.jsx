@@ -1,6 +1,6 @@
 import { View } from 'react-native';
-import Text from './Text';
-import styles from '../styles';
+import Text from '../Text';
+import styles from '../../styles';
 
 const StatColumn = ({ text, stat }) => {
   return (

@@ -1,7 +1,7 @@
 import { View, ScrollView } from 'react-native';
 import { Link } from 'react-router-native';
 import Tab from './Tab';
-import styles from '../styles';
+import styles from '../../styles';
 
 const AppBar = () => {
   return (

@@ -1,5 +1,5 @@
-import { FlatList, View } from 'react-native'
-import RepositoryItem from './RepositoryItem'
+import { FlatList, View } from 'react-native';
+import RepositoryItem from './RepositoryItem/RepositoryItem';
 import styles from '../styles';
 import { repositories } from '../data';
 

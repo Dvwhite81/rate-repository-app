@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import StatColumn from './StatColumn';
-import styles from '../styles';
+import styles from '../../styles';
 
 const StatsRow = ({ item }) => {
   const parseCount = (count) => {
