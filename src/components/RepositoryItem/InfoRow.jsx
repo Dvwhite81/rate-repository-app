@@ -11,8 +11,12 @@ const InfoRow = ({ item }) => {
         <CardImage src={item.ownerAvatarUrl} />
       </View>
       <View style={styles.infoCol}>
-        <Text style={styles.heading}>{item.fullName}</Text>
-        <Text style={styles.textWrap}>{item.description}</Text>
+        <View testID='fullName'>
+          <Text style={styles.heading}>{item.fullName}</Text>
+        </View>
+        <View>
+          <Text testID='description' style={styles.textWrap}>{item.description}</Text>
+        </View>
         <LanguageButton language={item.language} />
       </View>
     </View>

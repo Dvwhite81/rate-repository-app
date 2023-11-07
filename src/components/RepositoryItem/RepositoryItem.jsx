@@ -5,7 +5,7 @@ import styles from '../../styles';
 
 const RepositoryItem = ({ item }) => {
   return (
-    <View style={styles.card}>
+    <View testID='repositoryItem' style={styles.card}>
       <InfoRow item={item} />
       <StatsRow item={item} />
     </View>

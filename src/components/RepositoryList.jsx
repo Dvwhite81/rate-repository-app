@@ -4,22 +4,28 @@ import styles from '../styles';
 import useRepositories from '../hooks/useRepositories';
 
 const ItemSeparator = () => <View style={styles.separator} />;
+const RenderItem = ({ item }) => <RepositoryItem item={item} />;
+const KeyExtractor = (item, index) => index.toString();
 
-const RepositoryList = () => {
-  const { repositories } = useRepositories();
-
+export const RepositoryListContainer = ({ repositories }) => {
   const repositoryNodes = repositories
-    ? repositories.edges.map(edge => edge.node)
-    : [];
+  ? repositories.edges.map(edge => edge.node)
+  : [];
 
   return (
     <FlatList
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
-      renderItem={({ item }) => <RepositoryItem item={item} />}
-      keyExtractor={(item, index) => index.toString()}
+      renderItem={RenderItem}
+      keyExtractor={KeyExtractor}
     />
   );
+};
+
+const RepositoryList = () => {
+  const { repositories } = useRepositories();
+
+  return <RepositoryListContainer repositories={repositories} />;
 };
 
 export default RepositoryList;
