@@ -94,18 +94,19 @@ const styles = StyleSheet.create({
     width: '90%'
   },
   imageCol: {
-    width: '20%',
+    width: '15%',
   },
   infoCol: {
     rowGap: 2,
-    width: '80%',
+    width: '85%',
   },
   // Other elements - img, button, separator
   img: {
     borderRadius: 5,
-    height: 50,
-    marginRight: 20,
-    width: 50,
+    height: 60,
+    marginTop: 8,
+    marginLeft: 8,
+    width: 60,
   },
   languageButton: {
     ...buttonStyle,
@@ -121,6 +122,10 @@ const styles = StyleSheet.create({
   tab: {
     marginRight: 10,
     marginVertical: 'auto'
+  },
+  repoLink: {
+    marginHorizontal: 'auto',
+    width: '90%'
   },
   // Form, inputs
   form: {
