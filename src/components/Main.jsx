@@ -4,6 +4,7 @@ import AppBar from './AppBar/AppBar';
 import RepositoryList from './RepositoryList';
 import styles from '../styles';
 import SignIn from './SignIn';
+import SignOut from './SignOut';
 
 const Main = () => {
   return (
@@ -12,10 +13,11 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<RepositoryList />} exact />
         <Route path="/signin" element={<SignIn />} exact />
+        <Route path="/signout" element={<SignOut />} exact />
         <Route path="*" element={<Navigate to='/' replace />} />
       </Routes>
     </View>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

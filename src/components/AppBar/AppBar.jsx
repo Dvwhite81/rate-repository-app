@@ -1,18 +1,22 @@
 import { View, ScrollView } from 'react-native';
-import { Link } from 'react-router-native';
-import Tab from './Tab';
+import { useQuery } from '@apollo/client';
+import AppTab from './AppTab';
 import styles from '../../styles';
+import { GET_USER } from '../../graphql/queries';
 
 const AppBar = () => {
+  const { data } = useQuery(GET_USER, {
+    fetchPolicy: 'cache-and-network',
+  });
+
   return (
     <View style={styles.appBarContainer}>
       <ScrollView horizontal>
-        <Link to='/' activeStyle={{ color: 'red' }}>
-          <Tab text='Repositories' />
-        </Link>
-        <Link to='/signin' activeStyle={{ color: 'red' }}>
-         <Tab text='Sign in' />
-        </Link>
+        <AppTab path={'/'} activeStyle={{ color: 'red' }} text='Repositories' />
+        {data && data.me === null
+          ? <AppTab path={'/signin'} activeStyle={{ color: 'red' }} text='Sign In' />
+          : <AppTab path={'/signout'} activeStyle={{ color: 'red' }} text='Sign Out' />
+        }
       </ScrollView>
     </View>
   );

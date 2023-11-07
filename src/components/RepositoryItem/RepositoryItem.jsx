@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { View } from 'react-native';
 import InfoRow from './InfoRow';
 import StatsRow from './StatsRow';
 import styles from '../../styles';
@@ -9,7 +9,7 @@ const RepositoryItem = ({ item }) => {
       <InfoRow item={item} />
       <StatsRow item={item} />
     </View>
-  )
-}
+  );
+};
 
-export default RepositoryItem
+export default RepositoryItem;

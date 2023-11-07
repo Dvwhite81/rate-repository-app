@@ -16,4 +16,4 @@ const Tab = ({ text }) => {
   );
 };
 
-export default Tab
+export default Tab;

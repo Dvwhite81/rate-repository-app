@@ -11,4 +11,4 @@ export const REPO_DETAILS = gql`
     ratingAverage
     ownerAvatarUrl
   }
-`
+`;
