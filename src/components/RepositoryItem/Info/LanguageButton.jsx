@@ -1,6 +1,6 @@
 import { Pressable, View } from 'react-native';
-import Text from '../Text';
-import styles from '../../styles';
+import Text from '../../Text';
+import styles from '../../../styles';
 
 const LanguageButton = ({ language }) => {
   return (

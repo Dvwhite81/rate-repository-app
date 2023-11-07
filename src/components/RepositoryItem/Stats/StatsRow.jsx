@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import StatColumn from './StatColumn';
-import styles from '../../styles';
+import styles from '../../../styles';
 
 export const parseCount = (count) => {
   return count < 1000 ? count : (count / 1000).toFixed(1) + 'k';

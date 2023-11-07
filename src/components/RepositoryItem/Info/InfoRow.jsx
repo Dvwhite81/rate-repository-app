@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 import CardImage from './CardImage';
 import LanguageButton from './LanguageButton';
-import Text from '../Text';
-import styles from '../../styles';
+import Text from '../../Text';
+import styles from '../../../styles';
 
 const InfoRow = ({ item }) => {
   return (

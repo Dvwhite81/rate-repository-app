@@ -1,6 +1,6 @@
 import { View } from 'react-native';
-import InfoRow from './InfoRow';
-import StatsRow from './StatsRow';
+import InfoRow from './Info/InfoRow';
+import StatsRow from './Stats/StatsRow';
 import RepoLink from './RepoLink';
 import styles from '../../styles';
 

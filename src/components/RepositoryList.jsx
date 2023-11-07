@@ -14,7 +14,7 @@ export const RepositoryListContainer = ({ repositories }) => {
       </Pressable>
     );
   };
-const KeyExtractor = (item, index) => index.toString();
+  const KeyExtractor = (item, index) => index.toString();
   const repositoryNodes = repositories
   ? repositories.edges.map(edge => edge.node)
   : [];

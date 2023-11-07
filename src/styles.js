@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
 import theme from './theme';
 
 const buttonStyle = {
@@ -56,9 +55,8 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   appBarContainer: {
-    flexDirection: 'row',
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: theme.colors.bg,
+    flexDirection: 'row',
     padding: 20
   },
   card: {
@@ -140,6 +138,23 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
     width: '90%'
+  },
+  //Reviews
+  reviewCircle: {
+    alignItems: 'center',
+    borderColor: theme.colors.primary,
+    borderRadius: 50,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    color: theme.colors.primary,
+    display: 'flex',
+    fontSize: 18,
+    fontWeight: 'bold',
+    height: 60,
+    justifyContent: 'center',
+    marginLeft: 8,
+    marginTop: 8,
+    width: 60
   },
   // Error
   errorText: {

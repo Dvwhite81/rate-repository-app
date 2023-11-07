@@ -12,7 +12,3 @@ const RepoLink = ({ style, item }) => {
 };
 
 export default RepoLink;
-
-
-//////////////
-//// Fix image
