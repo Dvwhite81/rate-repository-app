@@ -215,6 +215,7 @@ const styles = StyleSheet.create({
   },
   // Picker
   pickerStyles: {
+    alignItems: 'center',
     backgroundColor: 'lightgray',
     elevation: 5,
     flex: 1,
@@ -227,9 +228,16 @@ const styles = StyleSheet.create({
   },
   pickerContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightgray',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  pickerSearch: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    fontSize: 20,
+    padding: 5,
+    width: '80%',
   },
 });
 

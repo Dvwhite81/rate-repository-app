@@ -1,8 +1,9 @@
-import { Picker } from '@react-native-picker/picker';
-import styles from '../../styles';
 import { View } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
+import TextInput from '../Form/TextInput';
+import styles from '../../styles';
 
-const Sorter = ({ handleOrder }) => {
+const Sorter = ({ handleOrder, searchKeyword, setSearchKeyword }) => {
   const options = [
     { value: 'latest',
       label: 'Latest Repositories',
@@ -25,6 +26,14 @@ const Sorter = ({ handleOrder }) => {
 
   return (
     <View style={styles.pickerContainer}>
+      <TextInput
+        style={styles.pickerSearch}
+        name='searchbar'
+        value={searchKeyword}
+        placeholder='Search for repo...'
+        placeholderTextColor='lightgray'
+        onChangeText={(text) => setSearchKeyword(text)}
+      />
       <Picker
         style={styles.pickerStyles}
         onValueChange={(option) => handleOption(option)}
