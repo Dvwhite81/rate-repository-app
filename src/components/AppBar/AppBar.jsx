@@ -14,8 +14,15 @@ const AppBar = () => {
       <ScrollView horizontal>
         <AppTab path={'/'} activeStyle={{ color: 'red' }} text='Repositories' />
         {data && data.me === null
-          ? <AppTab path={'/signin'} activeStyle={{ color: 'red' }} text='Sign In' />
-          : <AppTab path={'/signout'} activeStyle={{ color: 'red' }} text='Sign Out' />
+          ? (
+            <AppTab path={'/signin'} activeStyle={{ color: 'red' }} text='Sign In' />
+          )
+          : (
+            <>
+              <AppTab path={'/review'} activeStyle={{ color: 'red' }} text='Create A Review' />
+              <AppTab path={'/signout'} activeStyle={{ color: 'red' }} text='Sign Out' />
+            </>
+          )
         }
       </ScrollView>
     </View>

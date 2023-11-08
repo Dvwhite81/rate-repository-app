@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { parseISO } from 'date-fns';
-import { View } from 'react-native-web';
+import { View } from 'react-native';
 import Text from '../../Text';
 import styles from '../../../styles';
 

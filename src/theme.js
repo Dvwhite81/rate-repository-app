@@ -8,6 +8,7 @@ const theme = {
     bg: '#24292e',
     white: 'white',
     gray: 'gray',
+    lightGray: 'lightgray',
     error: '#d73a4a',
   },
   fontSizes: {

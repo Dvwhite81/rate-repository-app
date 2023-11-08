@@ -4,6 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { Pressable, View } from 'react-native';
 import Tab from './AppBar/Tab';
 
+export const SignOutContainer = ({ onSubmit }) => {
+  return (
+    <View>
+      <Pressable onPress={onSubmit}>
+        <Tab text='Sign Out' />
+      </Pressable>
+    </View>
+  );
+};
 
 const SignOut = () => {
   const authStorage = useAuthStorage();
@@ -17,11 +26,7 @@ const SignOut = () => {
   };
 
   return (
-    <View>
-      <Pressable onPress={onSubmit}>
-        <Tab text='Sign Out' />
-      </Pressable>
-    </View>
+    <SignOutContainer onSubmit={onSubmit} />
   );
 };
 

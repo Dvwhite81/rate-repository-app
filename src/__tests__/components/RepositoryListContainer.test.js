@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react-native';
 import { RepositoryListContainer } from '../../components/RepositoryList';
-import { parseCount } from '../../components/RepositoryItem/StatsRow';
+import { parseCount } from '../../components/RepositoryItem/Stats/StatsRow';
 
 describe('RepositoryList', () => {
   describe('RepositoryListContainer', () => {

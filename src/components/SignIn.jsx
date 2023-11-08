@@ -21,9 +21,18 @@ export const SignInContainer = ({ onSubmit }) => {
   );
 };
 
-const SignIn = () => {
+const SignIn = ({ setMessage, setModalVisible }) => {
   const [signIn] = useSignIn();
   const navigate = useNavigate();
+
+  const sendMessage = (newMessage) => {
+    setMessage(newMessage);
+    setModalVisible(true);
+    setTimeout(() => {
+      setMessage('');
+      setModalVisible(false);
+    }, 5000)
+  };
 
   const onSubmit = async (values) => {
     console.log('values: ', values);
@@ -32,8 +41,10 @@ const SignIn = () => {
     try {
       await signIn({ username, password });
       navigate('/');
+      sendMessage('Signed in!');
     } catch (e) {
       console.log(e);
+      sendMessage(e.message);
     }
   };
 

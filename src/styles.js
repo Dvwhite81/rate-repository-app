@@ -92,19 +92,19 @@ const styles = StyleSheet.create({
     width: '90%'
   },
   imageCol: {
-    width: '15%',
+    width: '20%',
   },
   infoCol: {
     rowGap: 2,
-    width: '85%',
+    width: '80%',
   },
   // Other elements - img, button, separator
   img: {
     borderRadius: 5,
-    height: 60,
+    height: 50,
     marginTop: 8,
     marginLeft: 8,
-    width: 60,
+    width: 50,
   },
   languageButton: {
     ...buttonStyle,
@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     marginVertical: 'auto'
   },
   repoLink: {
+    alignSelf: 'center',
     marginHorizontal: 'auto',
     width: '90%'
   },
@@ -141,7 +142,6 @@ const styles = StyleSheet.create({
   },
   //Reviews
   reviewCircle: {
-    alignItems: 'center',
     borderColor: theme.colors.primary,
     borderRadius: 50,
     borderStyle: 'solid',
@@ -150,11 +150,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     fontSize: 18,
     fontWeight: 'bold',
-    height: 60,
-    justifyContent: 'center',
-    marginLeft: 8,
-    marginTop: 8,
-    width: 60
+    height: 50,
+    margin: 5,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    width: 50
   },
   // Error
   errorText: {
@@ -163,6 +163,47 @@ const styles = StyleSheet.create({
   },
   errorBorder: {
     borderColor: theme.colors.error,
+  },
+  // Modal
+  centeredView: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center'
+  },
+  modalView: {
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    elevation: 5,
+    margin: 20,
+    padding: 35,
+    boxShadowColor: '#000',
+    boxShadowOffset: {
+      height: 2,
+      width: 0,
+    },
+    boxShadowOpacity: 0.25,
+    boxShadowRadius: 4,
+  },
+  modalButton: {
+    borderRadius: 20,
+    elevation: 2,
+    padding: 10,
+  },
+  modalButtonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  modalButtonClose: {
+    backgroundColor: '#2196F3',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
   },
 });
 

@@ -13,3 +13,18 @@ export const REPO_DETAILS = gql`
     ownerAvatarUrl
   }
 `;
+
+export const CREATE_REVIEW_DETAILS = gql`
+  fragment CreateReviewDetails on Review {
+    id
+    user {
+      id
+      username
+    }
+    userId
+    repositoryId
+    rating
+    createdAt
+    text
+  }
+`;

@@ -4,9 +4,8 @@ import RepositoryItem from './RepositoryItem/RepositoryItem';
 import styles from '../styles';
 import useRepositories from '../hooks/useRepositories';
 
-export const RepositoryListContainer = ({ repositories }) => {
+export const RepositoryListContainer = ({ repositories, navigate }) => {
   const ItemSeparator = () => <View style={styles.separator} />;
-  const navigate = useNavigate();
   const RenderItem = ({ item }) => {
     return (
       <Pressable onPress={() => navigate(`/${item.id}`)} >
@@ -31,8 +30,9 @@ export const RepositoryListContainer = ({ repositories }) => {
 
 const RepositoryList = () => {
   const { repositories } = useRepositories();
+  const navigate = useNavigate();
 
-  return <RepositoryListContainer repositories={repositories} />;
+  return <RepositoryListContainer repositories={repositories} navigate={navigate} />;
 };
 
 export default RepositoryList;

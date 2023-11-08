@@ -10,7 +10,8 @@ const FormikTextInput = ({ name, ...props }) => {
   return (
     <>
       <TextInput
-      style={styles.textInput}
+        style={styles.textInput}
+        placeholderTextColor='lightgray'
         onChangeText={value => helpers.setValue(value)}
         onBlur={() => helpers.setTouched(true)}
         value={field.value}

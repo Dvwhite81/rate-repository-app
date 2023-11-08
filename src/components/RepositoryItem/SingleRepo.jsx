@@ -9,13 +9,13 @@ import styles from '../../styles';
 const SingleRepo = () => {
   const { repo } = useRepo();
   const details = repo ? repo : {};
+  console.log('SingleRepo repo:', repo);
+  console.log('details:', details);
 
   const { reviews } = useReviews();
   const reviewNodes = reviews
   ? reviews.edges.map(edge => edge.node)
   : [];
-  console.log('reviews:', reviews);
-  console.log('nodes:', reviewNodes);
 
   const ItemSeparator = () => <View style={styles.separator} />;
   const RenderItem = ({ item }) => <ReviewItem item={item} />;
