@@ -9,6 +9,11 @@ const buttonStyle = {
   textAlign: 'center',
 };
 
+const headingStyle= {
+  fontSize: theme.fontSizes.subheading,
+  fontWeight: 'bold',
+};
+
 const styles = StyleSheet.create({
   // Text and colors
   text: {
@@ -39,8 +44,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   heading: {
-    fontSize: theme.fontSizes.subheading,
-    fontWeight: 'bold',
+    ...headingStyle,
   },
   textWrap : {
     flexWrap: 'wrap',
@@ -57,7 +61,12 @@ const styles = StyleSheet.create({
   appBarContainer: {
     backgroundColor: theme.colors.bg,
     flexDirection: 'row',
-    padding: 20
+    height: '15vh',
+    padding: 20,
+  },
+  scrollViewStyle: {
+    justifyContent: 'space-evenly',
+    width: '100%',
   },
   card: {
     borderBottomColor: 'gray',
@@ -118,8 +127,7 @@ const styles = StyleSheet.create({
     height: 10,
   },
   tab: {
-    marginRight: 10,
-    marginVertical: 'auto'
+        marginVertical: 'auto'
   },
   repoLink: {
     alignSelf: 'center',
@@ -153,7 +161,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 5,
     textAlign: 'center',
-    textAlignVertical: 'center',
+    verticalAlign: 'center',
     width: 50
   },
   // Error
@@ -204,6 +212,24 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'center',
+  },
+  // Picker
+  pickerStyles: {
+    backgroundColor: 'lightgray',
+    elevation: 5,
+    flex: 1,
+    fontSize: 20,
+    height: 'auto',
+    justifyContent: 'center',
+    marginHorizontal: 'auto',
+    textAlign: 'center',
+    width: '100%',
+  },
+  pickerContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

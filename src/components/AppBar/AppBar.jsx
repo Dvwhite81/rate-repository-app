@@ -11,7 +11,7 @@ const AppBar = () => {
 
   return (
     <View style={styles.appBarContainer}>
-      <ScrollView horizontal>
+      <ScrollView contentContainerStyle={styles.scrollViewStyle} horizontal>
         <AppTab path={'/'} activeStyle={{ color: 'red' }} text='Repositories' />
         {data && data.me === null
           ? (

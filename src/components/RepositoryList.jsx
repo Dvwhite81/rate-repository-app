@@ -1,10 +1,12 @@
 import { FlatList, Pressable, View } from 'react-native';
 import { useNavigate } from 'react-router-dom';
 import RepositoryItem from './RepositoryItem/RepositoryItem';
-import styles from '../styles';
+import Sorter from './Sorter/Sorter';
 import useRepositories from '../hooks/useRepositories';
+import styles from '../styles';
+import { useState } from 'react';
 
-export const RepositoryListContainer = ({ repositories, navigate }) => {
+export const RepositoryListContainer = ({ repositories, navigate, setOrder }) => {
   const ItemSeparator = () => <View style={styles.separator} />;
   const RenderItem = ({ item }) => {
     return (
@@ -24,15 +26,27 @@ export const RepositoryListContainer = ({ repositories, navigate }) => {
       ItemSeparatorComponent={ItemSeparator}
       renderItem={RenderItem}
       keyExtractor={KeyExtractor}
+      ListHeaderComponent={<Sorter handleOrder={setOrder} />}
     />
   );
 };
 
 const RepositoryList = () => {
-  const { repositories } = useRepositories();
+  const defaultOrder = {
+    value: 'latest',
+    label: 'Latest Repositories',
+    orderBy: 'CREATED_AT',
+    orderDirection: 'DESC'
+  };
+  const [order, setOrder] = useState(defaultOrder);
+  const { repositories } = useRepositories(order);
   const navigate = useNavigate();
 
-  return <RepositoryListContainer repositories={repositories} navigate={navigate} />;
+  return <RepositoryListContainer
+    repositories={repositories}
+    navigate={navigate}
+    setOrder={setOrder}
+  />;
 };
 
 export default RepositoryList;
