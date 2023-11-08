@@ -28,3 +28,24 @@ export const CREATE_REVIEW_DETAILS = gql`
     text
   }
 `;
+
+export const CREATE_USER_DETAILS = gql`
+  fragment CreateUserDetails on User {
+    id
+    username
+    createdAt
+    reviews {
+      edges {
+        node {
+          user {
+            username
+          }
+          rating
+          createdAt
+          text
+        }
+      }
+    }
+    reviewCount
+  }
+`;

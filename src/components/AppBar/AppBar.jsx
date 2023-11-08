@@ -15,7 +15,10 @@ const AppBar = () => {
         <AppTab path={'/'} activeStyle={{ color: 'red' }} text='Repositories' />
         {data && data.me === null
           ? (
-            <AppTab path={'/signin'} activeStyle={{ color: 'red' }} text='Sign In' />
+            <>
+              <AppTab path={'/signin'} activeStyle={{ color: 'red' }} text='Sign In' />
+              <AppTab path={'/signup'} activeStyle={{ color: 'red' }} text='Sign Up' />
+            </>
           )
           : (
             <>

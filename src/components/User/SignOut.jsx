@@ -1,8 +1,8 @@
 import { useApolloClient } from '@apollo/client';
-import useAuthStorage from '../hooks/useAuthStorage';
+import useAuthStorage from '../../hooks/useAuthStorage';
 import { useNavigate } from 'react-router-dom';
 import { Pressable, View } from 'react-native';
-import Tab from './AppBar/Tab';
+import Tab from '../AppBar/Tab';
 
 export const SignOutContainer = ({ onSubmit }) => {
   return (

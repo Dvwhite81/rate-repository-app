@@ -1,8 +1,8 @@
 import { Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import SignInForm from './Form/SignInForm';
-import { SignInSchema } from '../validation';
-import useSignIn from '../hooks/useSignIn';
+import SignInForm from './SignInForm';
+import { SignInSchema } from '../../../validation';
+import useSignIn from '../../../hooks/useSignIn';
 
 const initialValues = {
   username: '',

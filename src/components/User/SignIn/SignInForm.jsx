@@ -1,7 +1,7 @@
 import { Pressable, View } from 'react-native';
-import FormikTextInput from './FormikTextInput';
-import Text from '../Text';
-import styles from '../../styles';
+import FormikTextInput from '../../Form/FormikTextInput';
+import Text from '../../Text';
+import styles from '../../../styles';
 
 const SignInForm = ({ onSubmit }) => {
   return (
