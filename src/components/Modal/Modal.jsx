@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import { View, Modal, Pressable } from 'react-native';
 import styles from '../../styles';
 import Text from '../Text';
 
-
 const NotificationModal = ({ message, modalVisible, setModalVisible }) => {
-
   return (
     <View style={styles.centeredView}>
       <Modal

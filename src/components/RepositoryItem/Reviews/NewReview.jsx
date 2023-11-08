@@ -33,7 +33,7 @@ const NewReview = ({ setMessage, setModalVisible }) => {
     setTimeout(() => {
       setMessage('');
       setModalVisible(false);
-    }, 5000)
+    }, 5000);
   };
 
   const onSubmit = async (values) =>{
