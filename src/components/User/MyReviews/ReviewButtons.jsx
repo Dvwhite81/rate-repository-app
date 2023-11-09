@@ -6,7 +6,6 @@ import styles from '../../../styles';
 const ReviewButtons = ({item, handleDelete}) => {
   const navigate = useNavigate();
   const id = item.repository.id;
-  console.log('reviewButtons item:', item.repository.id)
 
   const handleView = () => {
     navigate(`/${id}`);

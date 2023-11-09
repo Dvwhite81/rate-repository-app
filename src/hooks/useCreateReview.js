@@ -7,7 +7,6 @@ const useCreateReview = () => {
 
   const createReview = async ({ ownerName, repositoryName, rating, text }) => {
     const { data } = await mutate({ variables: { ownerName, repositoryName, rating, text } });
-    console.log('review form data:', data);
     return data;
   };
 

@@ -38,7 +38,6 @@ const NewReview = ({ setMessage, setModalVisible }) => {
 
   const onSubmit = async (values) =>{
     const { ownerName, repositoryName, rating, text } = values;
-    console.log('NewReview values:', values);
 
     try {
       const data = await createReview({ ownerName, repositoryName, rating: parseInt(rating), text });
