@@ -1,45 +1,88 @@
-import { gql } from '@apollo/client';
-import { REPO_DETAILS } from './fragments';
+import { gql } from "@apollo/client";
+import {
+  PAGE_INFO,
+  REPOSITORY_DETAILS,
+  REVIEW_DETAILS,
+  USER_DETAILS,
+} from "./fragments";
 
 export const GET_REPOSITORIES = gql`
-  query GetRepositories(
+  query getRepositories(
     $orderBy: AllRepositoriesOrderBy
     $orderDirection: OrderDirection
     $searchKeyword: String
+    $after: String
+    $first: Int
   ) {
     repositories(
-      orderBy: $orderBy,
-      orderDirection: $orderDirection,
+      orderBy: $orderBy
+      orderDirection: $orderDirection
       searchKeyword: $searchKeyword
+      after: $after
+      first: $first
     ) {
-      totalCount
       edges {
         node {
-          ...RepoDetails
+          ...RepositoryDetails
+        }
+        cursor
+      }
+      pageInfo {
+        ...PageDetails
+      }
+    }
+  }
+  ${REPOSITORY_DETAILS}
+  ${PAGE_INFO}
+`;
+
+export const GET_USER = gql`
+  query getCurrentUser(
+    $includeReviews: Boolean = false
+    $first: Int
+    $after: String
+  ) {
+    me {
+      ...UserDetails
+      reviews(first: $first, after: $after) @include(if: $includeReviews) {
+        edges {
+          node {
+            ...ReviewDetails
+          }
+          cursor
+        }
+        pageInfo {
+          ...PageDetails
         }
       }
     }
   }
-  ${REPO_DETAILS}
-`;
-
-export const GET_USER = gql`
-  query {
-    me {
-      id
-      username
-    }
-  }
+  ${USER_DETAILS}
+  ${REVIEW_DETAILS}
+  ${PAGE_INFO}
 `;
 
 export const GET_REPO = gql`
-  query($id: ID!) {
+  query getRepository($id: ID!, $first: Int, $after: String) {
     repository(id: $id) {
+      ...RepositoryDetails
       url
-      ...RepoDetails
+      reviews(first: $first, after: $after) {
+        edges {
+          node {
+            ...ReviewDetails
+          }
+          cursor
+        }
+        pageInfo {
+          ...PageDetails
+        }
+      }
     }
   }
-  ${REPO_DETAILS}
+  ${REPOSITORY_DETAILS}
+  ${REVIEW_DETAILS}
+  ${PAGE_INFO}
 `;
 
 export const GET_REVIEWS = gql`

@@ -1,51 +1,47 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const REPO_DETAILS = gql`
-  fragment RepoDetails on Repository {
+export const REPOSITORY_DETAILS = gql`
+  fragment RepositoryDetails on Repository {
     id
     fullName
+    ownerAvatarUrl
     description
     language
     stargazersCount
     forksCount
     reviewCount
     ratingAverage
-    ownerAvatarUrl
   }
 `;
 
-export const CREATE_REVIEW_DETAILS = gql`
-  fragment CreateReviewDetails on Review {
+export const REVIEW_DETAILS = gql`
+  fragment ReviewDetails on Review {
     id
+    text
+    rating
+    createdAt
+    repository {
+      id
+      fullName
+    }
     user {
       id
       username
     }
-    userId
-    repositoryId
-    rating
-    createdAt
-    text
   }
 `;
 
-export const CREATE_USER_DETAILS = gql`
-  fragment CreateUserDetails on User {
+export const USER_DETAILS = gql`
+  fragment UserDetails on User {
     id
     username
-    createdAt
-    reviews {
-      edges {
-        node {
-          user {
-            username
-          }
-          rating
-          createdAt
-          text
-        }
-      }
-    }
-    reviewCount
+  }
+`;
+
+export const PAGE_INFO = gql`
+  fragment PageDetails on PageInfo {
+    endCursor
+    startCursor
+    hasNextPage
   }
 `;

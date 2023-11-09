@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 import theme from './theme';
 
 const buttonStyle = {
@@ -59,14 +60,15 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   appBarContainer: {
+    alignContent: 'center',
     backgroundColor: theme.colors.bg,
     flexDirection: 'row',
     height: '15vh',
-    padding: 20,
+    paddingVertical: Constants.statusBarHeight,
   },
   scrollViewStyle: {
     justifyContent: 'space-evenly',
-    width: '100%',
+    minWidth: '100%',
   },
   card: {
     borderBottomColor: 'gray',
@@ -127,7 +129,10 @@ const styles = StyleSheet.create({
     height: 10,
   },
   tab: {
-        marginVertical: 'auto'
+    alignSelf: 'center',
+    color: 'white',
+    marginHorizontal: 30,
+    marginVertical: 'auto',
   },
   repoLink: {
     alignSelf: 'center',
@@ -161,7 +166,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 5,
     textAlign: 'center',
-    verticalAlign: 'center',
+    verticalAlign: 'middle',
     width: 50
   },
   // Error

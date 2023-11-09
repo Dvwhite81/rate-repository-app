@@ -10,6 +10,7 @@ import SignOut from './User/SignOut';
 import SingleRepo from './RepositoryItem/SingleRepo';
 import NewReview from './RepositoryItem/Reviews/NewReview';
 import SignUp from './User/SignUp/SignUp';
+import MyReviews from './User/MyReviews';
 
 const Main = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -25,6 +26,7 @@ const Main = () => {
         <Route path="/signup" element={<SignUp />} exact />
         <Route path="/:id" element={<SingleRepo />} exact />
         <Route path="/review" element={<NewReview message={message} setMessage={setMessage} modalVisible={modalVisible} setModalVisible={setModalVisible} />} exact />
+        <Route path="/myreviews" element={<MyReviews />} exact />
         <Route path="*" element={<Navigate to='/' replace />} />
       </Routes>
       <NotificationModal message={message} modalVisible={modalVisible} setModalVisible={setModalVisible} />

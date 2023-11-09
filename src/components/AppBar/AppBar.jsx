@@ -6,7 +6,7 @@ import { GET_USER } from '../../graphql/queries';
 
 const AppBar = () => {
   const { data } = useQuery(GET_USER, {
-    fetchPolicy: 'cache-and-network',
+        fetchPolicy: 'cache-and-network',
   });
 
   return (
@@ -22,8 +22,9 @@ const AppBar = () => {
           )
           : (
             <>
-              <AppTab path={'/review'} activeStyle={{ color: 'red' }} text='Create A Review' />
-              <AppTab path={'/signout'} activeStyle={{ color: 'red' }} text='Sign Out' />
+              <AppTab path={'/review'} text='Create A Review' />
+              <AppTab path={'/myreviews'} text='My Reviews' />
+              <AppTab path={'/signout'} text='Sign Out' />
             </>
           )
         }

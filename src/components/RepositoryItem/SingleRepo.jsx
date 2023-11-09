@@ -9,8 +9,6 @@ import styles from '../../styles';
 const SingleRepo = () => {
   const { repo } = useRepo();
   const details = repo ? repo : {};
-  console.log('SingleRepo repo:', repo);
-  console.log('details:', details);
 
   const { reviews } = useReviews();
   const reviewNodes = reviews

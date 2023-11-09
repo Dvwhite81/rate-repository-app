@@ -3,10 +3,11 @@ import useAuthStorage from '../../hooks/useAuthStorage';
 import { useNavigate } from 'react-router-dom';
 import { Pressable, View } from 'react-native';
 import Tab from '../AppBar/Tab';
+import styles from '../../styles';
 
 export const SignOutContainer = ({ onSubmit }) => {
   return (
-    <View>
+    <View style={styles.tab}>
       <Pressable onPress={onSubmit}>
         <Tab text='Sign Out' />
       </Pressable>
