@@ -10,7 +10,7 @@ import SignOut from './User/SignOut';
 import SingleRepo from './RepositoryItem/SingleRepo';
 import NewReview from './RepositoryItem/Reviews/NewReview';
 import SignUp from './User/SignUp/SignUp';
-import MyReviews from './User/MyReviews';
+import MyReviews from './User/MyReviews/MyReviews';
 
 const Main = () => {
   const [modalVisible, setModalVisible] = useState(false);

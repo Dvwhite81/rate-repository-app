@@ -15,6 +15,13 @@ const headingStyle= {
   fontWeight: 'bold',
 };
 
+const reviewButtonStyle = {
+  ...buttonStyle,
+  padding: 15,
+  textAlign: 'center',
+  width: '45%'
+};
+
 const styles = StyleSheet.create({
   // Text and colors
   text: {
@@ -168,6 +175,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     verticalAlign: 'middle',
     width: 50
+  },
+  reviewButtons: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+    width: '100vw',
+  },
+  viewButton: {
+    ...reviewButtonStyle,
+  },
+  deleteButton: {
+    ...reviewButtonStyle,
+    backgroundColor: 'crimson',
+  },
+  reviewBtnText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   // Error
   errorText: {
